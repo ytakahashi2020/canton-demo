@@ -208,15 +208,15 @@ export const dict: Record<Lang, Dict> = {
       colPublic: 'パブリックBC（例: Ethereum）',
       colCanton: 'Canton Network',
       rows: [
-        { feature: 'データの可視性', pub: '全ノードに公開', canton: '当事者だけに開示' },
+        { feature: 'データの可視性', pub: '全ノードに公開', canton: 'ステークホルダー（署名者＋オブザーバー）に need-to-know で開示' },
         { feature: '状態モデル', pub: 'アカウント残高マップ', canton: 'アクティブ契約集合（ACS）' },
-        { feature: '参加', pub: '擬名で誰でも（アドレスは公開）', canton: 'パーミッション型（識別される）' },
+        { feature: '参加', pub: '擬名で誰でも（アドレスは公開）', canton: '公開・パーミッション型（public permissioned）' },
         { feature: 'スマートコントラクト', pub: 'Solidity / EVM', canton: 'Daml' },
         { feature: 'ネットワーク構成', pub: '単一のグローバル台帳', canton: '台帳の連合（誰も全体を見ない）' },
         { feature: '主な用途', pub: 'パブリックなDeFi・公開アプリ', canton: '規制下の機関金融・RWA' },
       ],
       disclaimer:
-        '※ この比較は理解のための単純化で、優劣を示すものではありません。Cantonの公開情報は開発元（Digital Asset）由来が多く、対比はその点を踏まえて中立に記述しています。',
+        '※ この比較は理解のための単純化で、優劣を示すものではありません。Cantonの公開情報は開発元（Digital Asset）由来が多く、対比はその点を踏まえて中立に記述しています。\n※ 可視性: 契約を見られるのは「当事者（署名者）」だけでなくオブザーバーも含むステークホルダー。さらに divulgence／explicit disclosure により、ステークホルダー以外にも開示されうる場合があります。\n※ 参加: ネットワーク全体は「public permissioned」。同期レイヤー（Synchronizer）は permissionless な設計を志向しますが、現状の検証ノード参加は GSF の承認／スポンサーが必要で、将来的な permissionless 化が計画されています。許可制の度合いはアプリごとにも設定できます。',
     },
     footer: {
       builtWith: 'React + Vite + TypeScript で構築・ブラウザ完結（バックエンド不要）',
@@ -351,15 +351,15 @@ export const dict: Record<Lang, Dict> = {
       colPublic: 'Public chain (e.g. Ethereum)',
       colCanton: 'Canton Network',
       rows: [
-        { feature: 'Data visibility', pub: 'Public to all nodes', canton: 'Disclosed only to parties' },
+        { feature: 'Data visibility', pub: 'Public to all nodes', canton: 'Disclosed on a need-to-know basis to stakeholders (signatories + observers)' },
         { feature: 'State model', pub: 'Account balance map', canton: 'Active Contract Set (ACS)' },
-        { feature: 'Joining', pub: 'Pseudonymous, anyone (addresses are public)', canton: 'Permissioned (identified)' },
+        { feature: 'Joining', pub: 'Pseudonymous, anyone (addresses are public)', canton: 'Public permissioned' },
         { feature: 'Smart contracts', pub: 'Solidity / EVM', canton: 'Daml' },
         { feature: 'Network shape', pub: 'One global ledger', canton: 'Federated ledgers (no full view)' },
         { feature: 'Primary use', pub: 'Public DeFi & open apps', canton: 'Regulated institutional finance & RWAs' },
       ],
       disclaimer:
-        'This comparison is simplified for learning and is not a judgment of which is "better". Much public material on Canton comes from its developer (Digital Asset); the contrast is written neutrally with that in mind.',
+        'This comparison is simplified for learning and is not a judgment of which is "better". Much public material on Canton comes from its developer (Digital Asset); the contrast is written neutrally with that in mind.\nVisibility: a contract is seen not only by its signatories but by all stakeholders (signatories + observers). Via divulgence / explicit disclosure, data can also reach parties beyond the stakeholders in some cases.\nJoining: the network as a whole is "public permissioned". The synchronizer layer is designed to be permissionless, but today validator onboarding requires GSF approval / a sponsor, with permissionless access planned over time. The degree of permissioning is also configurable per application.',
     },
     footer: {
       builtWith: 'Built with React + Vite + TypeScript — runs entirely in the browser, no backend.',

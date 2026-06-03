@@ -591,6 +591,7 @@ section {
   color: var(--ink-faint);
   font-size: 0.8rem;
   margin-top: 14px;
+  white-space: pre-line; /* render the \n-separated footnotes as lines */
 }
 
 /* explain callout */
